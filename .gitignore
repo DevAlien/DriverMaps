@@ -1,0 +1,7 @@
+/app/config/config.yaml
+/cache
+/log
+/media
+!/media/.gitignore
+*~
+*.DS_STORE
