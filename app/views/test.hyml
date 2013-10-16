@@ -1,0 +1,3 @@
+{loop name="test"}
+	{$test.name}
+{/loop}

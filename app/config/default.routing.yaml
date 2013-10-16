@@ -1,0 +1,46 @@
+homepage:
+  url:   /
+  param: { controller: home, action: index}
+
+signup:
+  url:   /user/signup
+  param: { controller: user, action: signup, method: POST}
+
+login:
+  url:   /login
+  param: { controller: user, action: login, method: POST}
+
+logout:
+  url:   /logout
+  param: { controller: user, action: logout, method: GET}
+
+profile_upload_profilepic:
+  url:   /profile/upload/profilepic
+  param: { controller: user, action: uploadProfilePicture, method: POST}
+
+profile_upload_coverpic:
+  url:   /profile/upload/coverpic
+  param: { controller: user, action: uploadProfileCover, method: POST}
+
+profile:
+  url:   /user/:userId
+  param: { controller: user, action: profile, method: GET}
+
+search:
+  url:   /search
+  param: { controller: home, action: search, method: GET}
+
+search_retrieve_events:
+  url:  /search/:minLat/:maxLat/:minLng/:maxLng
+  param: { controller: home, action: retrieve, method: GET}
+
+event_view:
+  url:   /event/:id/:title
+  param: { controller: event, action: view, method: GET}
+
+event_create:
+  url:   /event/new
+  param: { controller: event, action: create, method: GET}
+map_index;
+  url:  /map
+  param: { controller: maps, action: index }

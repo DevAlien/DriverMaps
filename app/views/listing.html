@@ -1,0 +1,91 @@
+{content name="head"}
+<link rel="stylesheet" href="{config.base_url}/app/views/stylesheets/homepage.css">
+<link rel="stylesheet" href="{config.base_url}/app/views/stylesheets/internal.css">
+{/content}
+
+{content name="footer"}
+    <script src="{config.base_url}/app/views/javascripts/homepage.js"></script>
+
+    <script src="{config.base_url}/app/views/javascripts/profile.js"></script>
+        <script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "f0691e92-e13c-4d99-be06-10a6e851847d", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+{/content}
+
+{content name="content"}
+<div class="page-container">
+    <div class="listing">
+        <!-- TOP PICTURE -->
+        <div class="row top">
+            <div class="twelve columns cover">
+                <img src="{config.base_url}/app/views/images/cover.jpg" alt="" />
+            </div>
+       </div>
+       <div class="row">
+            <div class="seven columns album">
+                <div class="row">
+                    <div class="twelve columns">
+                        <h1>{$event>title}</h1>
+                        <p>{lang.event.description}</p>
+                        <h3>{lang.event.menu}</h3>
+                        {$event>description}
+                    </div>
+                </div>
+            </div>
+            <div class="four columns offset-by-one events infos">
+                <h1>Monday 5. July 2013</h1>
+                <h1><i class="icon-time"></i> 20:00</h1>
+                <h3>Subscription close on 4. July 18:00</h3>
+                <h2><i class="icon-food"></i> Free places: 3/4</h2>
+                <div class="row book">
+                <form class="custom">
+                <div class="three columns">
+                    <h2 style="margin-top: 6px;">Book</h2>
+                </div>
+                <div class="nine columns">
+                    <select style="display:none;" id="customDropdown">
+                        <option SELECTED>1x 30&euro;</option>
+                        <option>2x 60&euro;</option>
+                        <option>3x 90&euro;</option>
+                      </select>
+                      <div class="custom dropdown">
+                        <a href="#" class="current">
+                          1x 30&euro;
+                        </a>
+                        <a href="#" class="selector"></a>
+                        <ul>
+                          <li>1x 30&euro;</li>
+                          <li>2x 60&euro;</li>
+                          <li>3x 90&euro;</li>
+                        </ul>
+                      </div>
+                  </div>
+                  </form>
+                  </div>
+                  <div class="row sharebar">
+                    <div class="twelve columns">
+                        <span class='st_sharethis_large' displayText='ShareThis'></span>
+                        <span class='st_facebook_large' displayText='Facebook'></span>
+                        <span class='st_twitter_large' displayText='Tweet'></span>
+                        <span class='st_linkedin_large' displayText='LinkedIn'></span>
+                        <span class='st_google_large' displayText='Google'></span>
+                        <span class='st_email_large' displayText='Email'></span>
+                    </div>
+                  </div>
+            </div>
+            <div class="four columns offset-by-one profile">
+                <h1>About the host...</h1>
+                <div class="row">
+                    <div class="three columns picture">
+                        <img src="{config.base_url}/app/views/images/picture.jpg" alt="Paulo" />
+                    </div>
+                    <div class="nine columns description">
+                        <h2>{$event>user>userData>name}</h2>
+                        <h4><i class="icon-signal"></i> Score <a href="#">80 / 100</a></h4>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
+</div>
+{/content}

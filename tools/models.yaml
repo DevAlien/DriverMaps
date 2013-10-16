@@ -1,0 +1,9 @@
+user:
+  email: { unique: true, type: string, lenght: 60, validator: [isEmail], formatter: [trim, lowercase] }
+  username: { unique: true, type: string, lenght: 60, validator: [noSpecialChars] }
+  password: { type: string, lenght: 16, validator: [validateEmail] }
+  sex: { type: enum, enum: [male, female] }
+  birthday: { type: date }
+
+test:
+	prova: { type: string, validator: [yeah, tea], prova: test, bool: true, int: 0022, fl: 0.29 }

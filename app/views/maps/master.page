@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Driver Maps</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas
+  	================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  	================================================== -->
+  	<link rel="stylesheet" href="{config.base_url}/app/views/maps/css/reset.css">
+    <link rel="stylesheet" href="{config.base_url}/app/views/maps/css/ut-fontface.css">
+    <link rel="stylesheet" href="{config.base_url}/app/views/maps/css/font-awesome.css">
+    <link rel="stylesheet" href="{config.base_url}/app/views/maps/css/ut-responsive-grid.css">
+    <link rel="stylesheet" href="{config.base_url}/app/views/maps/css/style.css">
+   
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="{config.base_url}/app/views/maps/images/favicon.ico">
+	<link rel="apple-touch-icon" href="{config.base_url}/app/views/maps/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="{config.base_url}/app/views/maps/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="{config.base_url}/app/views/maps/images/apple-touch-icon-114x114.png">
+
+	<!-- Load jQuery
+  	================================================== -->
+  	<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script src="{config.base_url}/app/views/maps/js/modernizr.js"></script>
+    <script src="{config.base_url}/app/views/maps/js/respond.src.js"></script>
+    
+    {content name="header"}
+    {/content}
+</head>
+<body id="mainsite">
+	
+	<!-- Primary Page Layout
+	================================================== -->
+
+	<!-- header section -->
+	<header id="header-section">     
+	<div class="grid-container">
+    	<!-- main-header -->
+		<div class="main-header clearfix">
+        	<div class="grid-30 mobile-grid-100 tablet-grid-30">
+                <div class="site-branding ">	
+                    <h1><a href="index.htm"><img src="{config.base_url}/app/views/maps/images/logo.png" alt="Driver Maps Logo"></a></h1>
+                </div>
+            </div>
+            
+            <!-- navigation -->
+            <div class="grid-70 hide-on-mobile tablet-grid-70">
+				<nav id="ut-navigation">
+                    <ul>
+                        <li><a class="selected" href="#mainsite">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#products">Take a tour</a></li>
+                    </ul>
+        		</nav>
+        	</div><!-- close navigation -->
+            
+    	</div><!-- close main-header -->        
+	</div><!-- close container -->
+	</header><!-- close header section -->
+
+	
+    {content name="content"}
+  {/content}
+    
+    <div class="clear"></div>
+    
+    <!-- Call to Action bottom section -->
+    {content name="cta"}
+    {/content}
+    
+    <div class="clear"></div>
+
+	<!-- Footer Section -->
+	<footer class="footer">
+		<div class="grid-container">
+        
+			<div class="grid-25 hide-on-mobile hide-on-tablet">
+            
+                <!-- footer site branding -->
+                <div class="site-branding">	
+                    <h1><a href="#"><img src="{config.base_url}/app/views/maps/images/logo.png" alt="Trenton Logo"></a></h1>
+                </div><!-- close footer site branding -->
+            
+            <p class="copyright">Copyright &copy; 2013 <a href="#">DRIVER MAPS</a>. <br>All rights reserved.</p>
+            
+            </div>
+            
+            <div class="grid-25 hide-on-mobile tablet-grid-33">
+            
+            	<h3>About</h3>
+                <ul>
+                	<li><a href="#">Affiliate program</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+                
+                
+            
+            </div>
+            
+            <div class="grid-25 hide-on-mobile tablet-grid-33">
+            
+            	<h3>Help</h3>
+                <ul>
+                	<li><a href="#">Support</a></li>
+                   	<li><a href="#">Orders</a></li>
+                    <li><a href="#">All help topics</a></li>
+                    <li><a href="#">FAQ</a></li>                  
+                </ul>
+                
+                
+            
+            </div>
+            
+            <div class="grid-25 hide-on-mobile tablet-grid-33">
+            
+            	<h3>Connect</h3>
+                <ul>
+                	<li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Google Plus</a></li>
+                </ul>    	
+            
+            </div>
+            
+             <!-- mobile copyright -->
+            <div class="hide-on-desktop mobile-grid-100 tablet-grid-100">
+            	<div class="mobile-copyright">
+                	<p class="copyright">Copyright &copy; 2013 <a href="#">Driver Maps</a>. All rights reserved.</p>
+                </div>
+            </div>
+            <!-- close mobile copyright -->           
+         	
+		</div><!-- close container -->
+	</footer><!-- close footer -->
+
+<!-- Load Javascript
+  	================================================== -->
+    <script src="{config.base_url}/app/views/maps/js/jquery.scrollTo.min.js"></script>
+	<script src="{config.base_url}/app/views/maps/js/classie.js"></script>
+	<script src="{config.base_url}/app/views/maps/js/cbpScroller.js"></script>
+ 
+	<script src="{config.base_url}/app/views/maps/js/jquery.custom.js"></script>
+	
+    <script type="text/javascript">
+    /* <![CDATA[ */
+		
+		(function($){
+	
+		"use strict";
+
+			$(document).ready(function(){
+	
+                {content name="load"}
+            {/content}
+			});
+			
+		})(jQuery);
+		
+	 /* ]]> */	
+    </script>
+    {content name="footer"}
+  {/content}
+<!-- End Document
+================================================== -->
+</body>
+</html>
+<!-- Localized -->

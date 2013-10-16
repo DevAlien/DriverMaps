@@ -1,0 +1,11 @@
+default:
+    base: http://area69.devalien.com
+    base_url: http://area69.devalien.com
+    base_dir: ""
+    db_type: mysql
+    db_host: localhost
+    db_name: area69
+    db_username: area69
+    db_password: "area96"
+    routing: default
+    lang: en

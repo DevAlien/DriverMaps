@@ -1,0 +1,370 @@
+<?php
+
+namespace app\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Devalien\WebBundle\Entity\Event
+ *
+ * @Table(name="event")
+ * @Entity()
+ *
+ */
+class Event
+{
+    /**
+     * @var integer $id
+     *
+     * @Column(name="id", type="integer")
+     * @Id()
+     * @GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @var string $title
+     *
+     * @Column(name="title", type="string", length=100)
+     */
+    protected $title;
+
+    /**
+     * @var string $description
+     *
+     * @Column(name="description", type="text", nullable=true)
+     */
+    protected $description;
+
+    /**
+     * @var string $picture
+     *
+     * @Column(name="top_picture", type="string", length=255, nullable=true)
+     */
+    protected $picture;
+
+    /**
+     * @var string $maxPeople
+     *
+     * @Column(name="max_people", type="integer")
+     */
+    protected $maxPeople;
+
+    /**
+     * @var string $price
+     *
+     * @Column(name="price", type="integer")
+     */
+    protected $price;
+
+    /**
+     * @var string $timeStart
+     *
+     * @Column(name="time_start", type="datetime")
+     */
+    protected $timeStart;
+
+    /**
+     * @var \DateTime $createdOn
+     *
+     * @Column(name="created_on", type="datetime")
+     */
+    protected $createdOn;
+
+    /**
+     * @var \DateTime $updatedOn
+     *
+     * @Column(name="updated_on", type="datetime")
+     */
+    protected $updatedOn;
+
+    /**
+     * @ManyToOne(targetEntity="User", cascade={"persist", "remove"})
+     * @JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    protected $user;
+    
+    /**
+     * @var decimal $lng
+     *
+     * @Column(type="decimal", precision=11, scale=8)
+     */
+    protected $lng;
+
+    /**
+     * @var decimal $lat
+     *
+     * @Column(type="decimal", precision=10, scale=8)
+     */
+    protected $lat;
+    
+    public function __construct()
+    {
+        $this->createdOn  = new \DateTime();
+        $this->updatedOn  = new \DateTime();
+    }
+    
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     * @return Event
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string 
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return Event
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set picture
+     *
+     * @param string $picture
+     * @return Event
+     */
+    public function setPicture($picture)
+    {
+        $this->picture = $picture;
+    
+        return $this;
+    }
+
+    /**
+     * Get picture
+     *
+     * @return string 
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * Set maxPeople
+     *
+     * @param integer $maxPeople
+     * @return Event
+     */
+    public function setMaxPeople($maxPeople)
+    {
+        $this->maxPeople = $maxPeople;
+    
+        return $this;
+    }
+
+    /**
+     * Get maxPeople
+     *
+     * @return integer 
+     */
+    public function getMaxPeople()
+    {
+        return $this->maxPeople;
+    }
+
+    /**
+     * Set price
+     *
+     * @param integer $price
+     * @return Event
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    
+        return $this;
+    }
+
+    /**
+     * Get price
+     *
+     * @return integer 
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * Set timeStart
+     *
+     * @param \DateTime $timeStart
+     * @return Event
+     */
+    public function setTimeStart($timeStart)
+    {
+        $this->timeStart = $timeStart;
+    
+        return $this;
+    }
+
+    /**
+     * Get timeStart
+     *
+     * @return \DateTime 
+     */
+    public function getTimeStart()
+    {
+        return $this->timeStart;
+    }
+
+    /**
+     * Set createdOn
+     *
+     * @param \DateTime $createdOn
+     * @return Event
+     */
+    public function setCreatedOn($createdOn)
+    {
+        $this->createdOn = $createdOn;
+    
+        return $this;
+    }
+
+    /**
+     * Get createdOn
+     *
+     * @return \DateTime 
+     */
+    public function getCreatedOn()
+    {
+        return $this->createdOn;
+    }
+
+    /**
+     * Set updatedOn
+     *
+     * @param \DateTime $updatedOn
+     * @return Event
+     */
+    public function setUpdatedOn($updatedOn)
+    {
+        $this->updatedOn = $updatedOn;
+    
+        return $this;
+    }
+
+    /**
+     * Get updatedOn
+     *
+     * @return \DateTime 
+     */
+    public function getUpdatedOn()
+    {
+        return $this->updatedOn;
+    }
+
+    /**
+     * Set userData
+     *
+     * @param \app\Entity\User $userData
+     * @return Event
+     */
+    public function setUserData(\app\Entity\User $userData = null)
+    {
+        $this->userData = $userData;
+    
+        return $this;
+    }
+
+    /**
+     * Get userData
+     *
+     * @return \app\Entity\User 
+     */
+    public function getUserData()
+    {
+        return $this->userData;
+    }
+
+    /**
+     * Set lng
+     *
+     * @param float $lng
+     * @return Event
+     */
+    public function setLng($lng)
+    {
+        $this->lng = $lng;
+    
+        return $this;
+    }
+
+    /**
+     * Get lng
+     *
+     * @return float 
+     */
+    public function getLng()
+    {
+        return $this->lng;
+    }
+
+    /**
+     * Set lat
+     *
+     * @param float $lat
+     * @return Event
+     */
+    public function setLat($lat)
+    {
+        $this->lat = $lat;
+    
+        return $this;
+    }
+
+    /**
+     * Get lat
+     *
+     * @return float 
+     */
+    public function getLat()
+    {
+        return $this->lat;
+    }
+}

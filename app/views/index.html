@@ -1,0 +1,151 @@
+{content name="head"}
+  
+
+  <link rel="stylesheet" href="{config.base_url}/app/views/stylesheets/superslides.css" type="text/css" media="screen" />
+
+  <!-- Included CSS Files for website styling -->
+  <link rel="stylesheet" href="{config.base_url}/app/views/stylesheets/homepage.css">
+{/content}
+{content name="footer"}
+<script src="{config.base_url}/app/views/javascripts/homepage.js"></script>
+<script src="{config.base_url}/app/views/javascripts/slider/jquery.easing.1.3.js"></script>
+  <script src="{config.base_url}/app/views/javascripts/slider/jquery.animate-enhanced.min.js"></script>
+  
+  <script src="{config.base_url}/app/views/javascripts/slider/jquery.superslides.js" type="text/javascript" charset="utf-8"></script>
+  <script src="{config.base_url}/app/views/javascripts/slider/application.js"></script>
+{/content}
+{content name="content"}
+<div class="page-container">
+  <div id="slides">
+        <ul class="slides-container hide-for-small">
+            <li>
+            <img src="{config.base_url}/app/views/images/slideshow/img1.jpg" alt="">
+            <div class="container info-box">
+                <div class="info-icon">
+                    <a href="#"></a>
+                </div>
+                <div class="text-box">
+                    <p><a href="#"><strong>Andreas Lotz</strong></a></p>
+                    <p class="small"><a href="#">Zurich</a>, <a href="#">Switzerland</a></p>
+                </div>
+                <div class="picture-box" data-src="{config.base_url}/app/views/images/thumb.jpg"></div>
+            </div>
+          </li>
+          <li>
+            <img src="{config.base_url}/app/views/images/slideshow/img2.jpg" alt="">
+            <div class="container info-box">
+                <div class="info-icon">
+                    <a href="#"></a>
+                </div>
+                <div class="text-box">
+                    <p><a href="#"><strong>Pikas Lula</strong></a></p>
+                    <p class="small"><a href="#">Geneve</a>, <a href="#">Switzerland</a></p>
+                </div>
+                <div class="picture-box" data-src="{config.base_url}/app/views/images/thumb.jpg"></div>
+            </div>
+          </li>
+        </ul>
+        <!-- MAIN SEARCH BAR -->
+        <div class="row main-search hide-for-small">
+          <h1>
+          {lang.title_what_would_eat}</h1>
+            <h2>Mangia a casa di 1926 utenti in 96 paesi.</h2>
+            <div class="twelwe columns centered transparent">
+              <form>
+                  <div class="row">
+                      <div class="seven mobile-one columns">
+                        <input type="text" class="twelve" placeholder="{lang.home_search_placeholder}" />
+                        </div>
+                      <div class="two mobile-one columns">
+                        <div class="row collapse">
+                            <div class="nine mobile-three columns">
+                              <input type="text" placeholder="{lang.when}" />
+                            </div>
+                            <div class="three mobile-one columns">
+                              <span class="postfix"><span class="icon-calendar"></span></span>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="two mobile-one columns">
+                        <div class="row collapse">
+                            <div class="nine mobile-three columns">
+                              <input type="text" placeholder="{lang.hour}" />
+                            </div>
+                                <div class="three mobile-one columns">
+                                    <span class="postfix"><span class="icon-time"></span></span>
+                                </div>
+                        </div>
+                      </div>
+                        <div class="one mobile-one columns">
+                          <input type="submit" class="button radius" value="{lang.search}" />
+                        </div>
+                  </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- NAVIGATION BAR -->
+        <nav class="slides-navigation hide-for-small">
+          <a href="#" class="next">
+            <i class="icon-chevron-right"></i>
+          </a>
+          <a href="#" class="prev">
+            <i class="icon-chevron-left"></i>
+          </a>
+        </nav>
+  </div>
+    <div class="orange-content">
+      <div class="row">
+          <div class="twelve columns">
+                <div class="read-more">
+                  <div class="txt">
+                      <h3>{lang.read_more_what_we_do}</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                    <span class="rounded-icon icon"><img src="{config.base_url}/app/views/images/icon-more.png" alt="read more" /></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="four columns">
+              <div class="panel radius white">
+                <h3>Be a chef</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p><a href="#">See popular listings »</a></p>
+                </div>
+            </div>
+            <div class="four columns">
+              <div class="panel radius white">
+                <h3>Be a maitre</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p><a href="#">See popular listings »</a></p>
+                </div>
+            </div>
+            <div class="four columns">
+              <div class="panel radius white">
+                <h3>Eat in a different way</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p><a href="#">See popular listings »</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-app hide-for-small">
+      <div class="row">
+          <div class="seven columns centered">
+              <div class="row">
+              <div class="two columns left"><img src="{config.base_url}/app/views/images/icon-mobile.png" alt="mobile" class="mobile" /></div>
+                <div class="nine columns left">
+                  <h4>Install cookmehome on your mobile</h4>
+                    <p>E arrichisci la tua esperienza con tutte le funzionalità 
+a portata di swipe!</p>
+        </div>
+                <div class="one columns right">
+                  <span class="rounded-icon icon"><img src="{config.base_url}/app/views/images/icon-rocket.png" alt="read more" /></div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/content}

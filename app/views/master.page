@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Welcome to Qcino</title>
+
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="{config.base_url}/app/views/stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="{config.base_url}/app/views/stylesheets/foundation.css">
+  <link rel="stylesheet" href="{config.base_url}/app/views/stylesheets/app.css">
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+  <!-- <script src="{config.base_url}/app/views/javascripts/modernizr.foundation.js"></script> -->
+  {content name="head"}
+  {/content}
+</head>
+<body>
+<!-- LOGIN / REGISTER BOX -->
+<div id="signup">
+	<div class="signup-ct">
+		<div class="fb-signup">
+			<h3>Create a new account</h3>
+            <p>Find a chef or a seat free in your friend list. Cookmehome will not publish anything without your consensus.</p>
+            <p class="small"><a href="#">Already registered?</a></p>
+        	<p>FB BUTTON</p>
+        </div>
+		<div class="interline"><p>OR</p></div>
+        <div class="form-signup">
+        	<p>Sign up using your <a href="#" id="open-form-hidden">e-mail address</a></p>
+        	<form id="form-hidden" method="post" action="{config.base_url}/user/signup">
+              <div class="row">
+                  <div class="six mobile-one columns">
+                      <input type="text" class="twelve" placeholder="Name" name="login[name]"/>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="six mobile-one columns">
+                      <input type="text" class="twelve" placeholder="Surname" name="login[surname]"/>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="six mobile-one columns">
+                      <input type="text" class="twelve" placeholder="E-mail address" name="login[email]"/>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="six mobile-one columns">
+                      <input type="password" class="twelve" placeholder="Password" id="password" name="login[password]"/>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="six mobile-one columns">
+                      <input type="password" class="twelve" placeholder="Confirm password" id="confirm-password" name="login[repeat_password]" style="display: none;" />
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="one mobile-one columns">
+                        <input type="submit" class="button radius" value="Sign up" />
+                    </div>
+                </div>
+            </form>
+		</div>
+	</div>
+</div>
+<div id="login">
+	<div class="login-ct">
+		<div class="fb-login">
+			<h3>Login</h3>
+            <p class="small"><a href="#">Non ancora iscritto con noi? Sign up</a></p>
+        	<p>FB BUTTON</p>
+        </div>
+		<div class="interline"><p>OR</p></div>
+        <div class="form-login">
+        	<form id="loginForm" method="post">
+            	<div class="row">
+					<div class="six mobile-one columns messages">
+						<p></p>
+					</div>
+				</div>
+				<div class="row">
+                	<div class="six mobile-one columns">
+                    	<input type="text" class="twelve grabbit" placeholder="E-mail address" name="email" />
+                    </div>
+                </div>
+                <div class="row">
+                	<div class="six mobile-one columns">
+                    	<input type="password" class="twelve grabbit" placeholder="Password" name="password" />
+                    </div>
+                </div>
+                <!-- <div class="row">
+                	<div class="six mobile-one columns">
+      					<label for="remember"><input type="checkbox" id="remember"> Remember me</label>
+                    </div>
+                </div> -->
+                <div class="row">
+                	<div class="five mobile-one columns">
+                    	<p><a href="#">Hai dimenticato la password?</a></p>
+                    </div>
+                </div>
+                <div class="row">
+                	<div class="one mobile-one columns">
+                        <input type="submit" class="button radius" value="Login" />
+                    </div>
+                </div>
+            </form>
+		</div>
+	</div>
+</div>
+<!--
+<div id="alert" class="hide-for-small">
+	<p>La prima volta qui? Ti stai chiedendo se sei nel posto giusto? Scoprilo <a href="#">cliccando qui</a>!<span class="close"></span></p>
+</div>
+-->	
+<header>
+	<nav class="top-bar">
+  		<ul class="title-area">
+    	<!-- Logo Area -->
+    		<li class="logo"><a href="#"><img src="logo.svg" onerror="this.onerror=null; this.src='{config.base_url}/app/views/images/logo.png'"></a></li>
+    		<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    		<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  		</ul>
+
+  <section class="top-bar-section">
+    <!-- Left Nav Section -->
+    <!-- <ul class="left">      
+      <li class="has-dropdown"><a href="#">DISCOVER</a>
+            <ul class="dropdown">
+              <li><a href="#">Best in ranking</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Friends</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Suggested locations</a></li>
+            </ul>
+          </li>
+    </ul> -->
+
+    <!-- Right Nav Section -->
+    {ifIsLogged}
+    <ul class="right">
+      <li><a href="#">{lang.topbar.dashboard}</a></li>
+      <!-- <li><a href="#">{lang.topbar.messages}<span class="round alert label">1</span></a></li> -->
+      <li class="has-button">
+        <a class="button alert radius" href="#">ADD A SEAT!</a>
+      </li>
+      <!-- <li class="has-dropdown"><a href="#">NEED HELP?</a>
+        <ul class="dropdown">
+              <li><a href="#">Best in ranking</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Friends</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Suggested locations</a></li>
+            </ul>
+      </li> -->
+      <li class="has-dropdown"><a href="#">{user>userData>name}</a>
+        <ul class="dropdown">
+              <li><a href="#">Your listings</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Your events</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Edit profile</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Account</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+      </li>
+    </ul>
+    {else}
+      <ul class="right">
+       <li><a rel="leanModal" name="signup" href="#signup">{lang.topbar.signup}</a></li>
+		  <li><a rel="leanModal" name="login" href="#login">{lang.topbar.login}</a></li>
+		 <!--  <li class="has-dropdown"><a href="#">{lang.need_help}</a>
+			<ul class="dropdown">
+				  <li><a href="#">Best in ranking</a></li>
+				  <li class="divider"></li>
+				  <li><a href="#">Friends</a></li>
+				  <li class="divider"></li>
+				  <li><a href="#">Suggested locations</a></li>
+				</ul>
+		  </li> -->
+		  <li class="start-now"><a rel="leanModal" name="signup" href="#signup">{lang.topbar.start_now}</a></li>
+    </ul>
+    {/if}
+
+    
+  </section>
+</nav>
+</header>
+{content name="content"}
+
+{/content}
+<div id="codeDev"></div>
+<footer>
+<div class="row">
+  <div class="three columns">
+  	<ul>
+    	<li class="first"><strong>Location settings</strong></li>
+        <li>
+        	<div href="#" class="tiny radius button dropdown">
+              ENGLISH
+              <ul>
+                <li><a href="#">Italiano</a></li>
+                <li><a href="#">Deutsch</a></li>
+              </ul>
+            </div>
+            <div href="#" class="tiny radius button dropdown">
+              CHF
+              <ul>
+                <li><a href="#">EUR</a></li>
+                <li><a href="#">USD</a></li>
+              </ul>
+            </div>
+        </li>
+    </ul>
+  </div>
+  <div class="three columns hide-for-small">
+  <ul>
+    	<li class="first"><strong>Discover</strong></li>
+        <li><a href="#">Safety</a></li>
+        <li><a href="#">Mobile</a></li>
+        <li><a href="#">Stories of success</a></li>
+        <li><a href="#">How it works</a></li>
+        <li><a href="#">Why use it?</a></li>
+        <li><a href="#">Social Connections</a></li>
+    </ul>
+  </div>
+  <div class="three columns">
+ 	<ul>
+    	<li class="first"><strong>About us</strong></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Policies</a></li>
+        <li><a href="#">Terms &amp; Privacy</a></li>
+    </ul>
+  </div>
+  <div class="three columns">
+  <ul>
+    	<li class="first"><strong>Follow us on</strong></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Google+</a></li>
+        <li class="credits">&copy; cookmehome
+		<li>Made with <span class="icon-heart dark"></span> in Switzerland</li>
+        </li>
+    </ul>
+  </div>
+</div>
+</footer>
+
+<!-- Included JS Files (Compressed) -->
+  <script src="{config.base_url}/app/views/javascripts/jquery.js"></script>
+  <script src="{config.base_url}/app/views/javascripts/foundation.min.js"></script>
+  
+  <!-- Initialize JS Plugins -->
+  <script src="{config.base_url}/app/views/javascripts/app.js"></script>
+  <script src="{config.base_url}/app/views/javascripts/jquery.leanModal.min.js" type="text/javascript"></script>
+  {content name="footer"}
+  {/content}
+</body>
+</html>

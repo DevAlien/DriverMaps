@@ -1,0 +1,17 @@
+topbar:
+	signup: Signup
+	login: LOGIN
+	start_now: START NOW!
+	dashboard: Dashboard
+	messages: Messages
+add_a_seat: Add a seat!
+need_help: NEED HELP?
+your_listing: Your Listing
+title_what_would_eat: What would you like to eat?
+home_search_placeholder: Chinese? Japanese? Italian?
+when: When?
+hour: Hour?
+search: Search
+read_more_what_we_do: Read more about what we can do for you...
+event:
+	description: Description

@@ -1,0 +1,302 @@
+{content name="head"}
+<link rel="stylesheet" href="{config.base_url}/app/views/stylesheets/homepage.css">
+<link rel="stylesheet" href="{config.base_url}/app/views/stylesheets/internal.css">
+{/content}
+
+{content name="footer"}
+    <script src="{config.base_url}/app/views/javascripts/homepage.js"></script>
+
+    <script src="{config.base_url}/app/views/javascripts/profile.js"></script>
+    <script src="{config.base_url}/app/views/javascripts/jquery.masonry.min.js"></script>
+    <script src="{config.base_url}/app/views/javascripts/ajaxfileupload.js"></script>
+    {if condition="[$own_profile] == true"}
+    <script type="text/javascript">
+    $(".profile-picture").click(function(event) {
+        $('#profile-picture').click();
+    });
+
+    $('#profile-picture').change(function(click) {
+        // $("#loading")
+        //     .ajaxStart(function(){
+        //         $(this).show();
+        //     })
+        //     .ajaxComplete(function(){
+        //         $(this).hide();
+        //     });
+
+        $.ajaxFileUpload
+        (
+            {
+                url:'{config.base_url}/profile/upload/profilepic',
+                secureuri:false,
+                fileElementId:'profile-picture',
+                dataType: 'json',
+                data:{},
+                success: function (data, status)
+                {
+                    console.log("prima");
+                    if (data.filename) {
+                        console.log("tjteite");
+                        $("#ppict").attr("src", '{config.base_url}' + data.filename);
+                    }
+                    if(data.error || typeof(data.error) != 'undefined')
+                    {
+                        if(data.error != '')
+                        {
+                            alert(data.error);
+                        }else
+                        {
+                            alert(data.msg);
+                        }
+                    }
+                },
+                error: function (data, status, e)
+                {
+                    alert(e);
+                }
+            }
+        )
+});
+
+
+
+
+
+ $(".profile-cover").click(function(event) {
+        $('#profile-cover').click();
+    });
+
+    $('#profile-cover').change(function(click) {
+        // $("#loading")
+        //     .ajaxStart(function(){
+        //         $(this).show();
+        //     })
+        //     .ajaxComplete(function(){
+        //         $(this).hide();
+        //     });
+
+        $.ajaxFileUpload
+        (
+            {
+                url:'{config.base_url}/profile/upload/coverpic',
+                secureuri:false,
+                fileElementId:'profile-cover',
+                dataType: 'json',
+                data:{},
+                success: function (data, status)
+                {
+                    console.log("prima");
+                    if (data.filename) {
+                        console.log("tjteite");
+                        $("#coverpic").attr("src", '{config.base_url}' + data.filename);
+                    }
+                    if(data.error || typeof(data.error) != 'undefined')
+                    {
+                        if(data.error != '')
+                        {
+                            alert(data.error);
+                        }else
+                        {
+                            alert(data.msg);
+                        }
+                    }
+                },
+                error: function (data, status, e)
+                {
+                    alert(e);
+                }
+            }
+        )
+});
+
+ 
+
+    </script>
+    {/if}
+{/content}
+
+{content name="content"}
+<div class="page-container">
+	<div class="profile">
+    	<!-- TOP PICTURE -->
+        <div class="row top">
+        	<div class="twelve columns cover">
+                <input type="file" name="profile-cover" id="profile-cover" class="hidden-upload" />
+                {if condition="[$profile>userData>topPicture] == ''"}
+                <img src="{config.base_url}/app/views/images/cover.jpg" alt="{$profile>userData>name}" id="coverpic" class="profile-cover"/>
+                {else}
+                <img src="{config.base_url}{$profile>userData>topPicture}" alt="{$profile>userData>name}" id="coverpic" class="profile-cover"/>
+                {/if}
+            </div>
+       		<div class="three columns picture">
+                <input type="file" name="profile-picture" id="profile-picture" class="hidden-upload" />
+                {if condition="[$profile>userData>profilePicture] == ''"}
+                    <img src="{config.base_url}/app/views/images/picture.jpg" alt="{$profile>userData>name}" id="ppict" class="profile-picture"/>
+                {else}
+                    <img src="{config.base_url}{$profile>userData>profilePicture}"  alt="{$profile>userData>name}" id="ppict" class="profile-picture"/>
+                {/if}
+                <h3><i class="icon-signal"></i> Score <a href="#">80 / 100</a></h3>
+            </div>
+            <div class="nine columns description">
+            	<h1>{$profile>userData>name}</h1>
+                <h2>{$profile>userData>name}</h2>
+                <p>{$profile>userData>description}</p> 
+            </div>
+       </div>
+       <div class="row">
+       		<div class="seven columns album">
+            	<div class="row">
+                	<div class="twelve columns">
+                        <h2>Album title</h2>
+                        <div id="image-container">
+                            <div class="box">
+                                <img src="http://4.bp.blogspot.com/-yTKhFvBy6sI/UJctabp7BuI/AAAAAAAAARE/IN-kHcqOC6I/s1600/BBQ.jpg" alt="" />
+                            </div>
+                            <div class="box">
+                                <img src="http://kieranwhite.net/wp-content/uploads/barbeque.jpg" alt="" />
+                            </div>
+                            <div class="box">
+                                <img src="http://4.bp.blogspot.com/-27vzGrGKWqw/UEcDlm4uNuI/AAAAAAAAAyE/zCuCDJ-eNxc/s1600/BBQ-Donut-2.jpg" alt="" />
+                            </div>
+                            <div class="box">
+                                <img src="http://cdn.sheknows.com/articles/summer-bbq-1.jpg" alt="" />
+                            </div>
+                            <div class="box">
+                                <img src="http://www.scattidigusto.it/wp-content/uploads/2013/02/bbq-fuoco-640x480.jpeg" alt="" />
+                            </div>
+                            <div class="box">
+                                <img src="http://www.epicgasm.com/wp-content/uploads/2013/03/nun-at-a-bbq-wtf-pictures.jpg" alt="" />
+                            </div>
+                            <div class="box">
+                                <img src="http://1.bp.blogspot.com/-1x00rioRHDo/UYflLBtRiUI/AAAAAAAAN8Y/-9u0KyZ9DVg/s1000/bbq-lentil-veggie-burger-Spiced-apple-cake+031-002.JPG" alt="" />
+                            </div>
+                        </div>
+                	</div>
+                </div>
+            </div>
+            <div class="four columns offset-by-one events">
+            	<h1>Next events</h1>
+                	<ul class="events-container">
+                    	<li><a href="#">
+                        	<div class="hour">
+                            	<p>24/07/2013</p>
+                                <p class="time">18.00</p>
+                            </div>
+                            <div class="thumb">
+                            	<img src="{config.base_url}/app/views/images/icon-mini-plate.png" alt="" />
+                            </div>
+                            <div class="description">
+                            	<p><strong>Grigliatona in compagnia</strong></p>
+								<p>USI Università della Svizzera italiana (Official Page) a Lugano...</p>
+                            </div>
+                            </a>
+                        </li>
+                        <li><a href="#">
+                        	<div class="hour">
+                            	<p>24/07/2013</p>
+                                <p class="time">18.00</p>
+                            </div>
+                            <div class="thumb">
+                            	<img src="{config.base_url}/app/views/images/icon-mini-plate.png" alt="" />
+                            </div>
+                            <div class="description">
+                            	<p><strong>Grigliatona in compagnia</strong></p>
+								<p>USI Università della Svizzera italiana (Official Page) a Lugano...</p>
+                            </div>
+                            </a>
+                        </li>
+                        <li><a href="#">
+                        	<div class="hour">
+                            	<p>24/07/2013</p>
+                                <p class="time">18.00</p>
+                            </div>
+                            <div class="thumb">
+                            	<img src="{config.base_url}/app/views/images/icon-mini-plate.png" alt="" />
+                            </div>
+                            <div class="description">
+                            	<p><strong>Grigliatona in compagnia</strong></p>
+								<p>USI Università della Svizzera italiana (Official Page) a Lugano...</p>
+                            </div>
+                            </a>
+                        </li>
+                        <li><a href="#">
+                        	<div class="hour">
+                            	<p>24/07/2013</p>
+                                <p class="time">18.00</p>
+                            </div>
+                            <div class="thumb">
+                            	<img src="{config.base_url}/app/views/images/icon-mini-plate.png" alt="" />
+                            </div>
+                            <div class="description">
+                            	<p><strong>Grigliatona in compagnia</strong></p>
+								<p>USI Università della Svizzera italiana (Official Page) a Lugano...</p>
+                            </div>
+                            </a>
+                        </li>
+                    </ul>
+            </div>
+            <div class="four columns offset-by-one events past">
+            	<h1>Past events</h1>
+                <ul class="events-container">
+                    	<li><a href="#">
+                        	<div class="hour">
+                            	<p>24/07/2013</p>
+                                <p class="time">18.00</p>
+                            </div>
+                            <div class="thumb">
+                            	<img src="{config.base_url}/app/views/images/icon-mini-plate.png" alt="" />
+                            </div>
+                            <div class="description">
+                            	<p><strong>Grigliatona in compagnia</strong></p>
+								<p>USI Università della Svizzera italiana (Official Page) a Lugano...</p>
+                            </div>
+                            </a>
+                        </li>
+                        <li><a href="#">
+                        	<div class="hour">
+                            	<p>24/07/2013</p>
+                                <p class="time">18.00</p>
+                            </div>
+                            <div class="thumb">
+                            	<img src="{config.base_url}/app/views/images/icon-mini-plate.png" alt="" />
+                            </div>
+                            <div class="description">
+                            	<p><strong>Grigliatona in compagnia</strong></p>
+								<p>USI Università della Svizzera italiana (Official Page) a Lugano...</p>
+                            </div>
+                            </a>
+                        </li>
+                        <li><a href="#">
+                        	<div class="hour">
+                            	<p>24/07/2013</p>
+                                <p class="time">18.00</p>
+                            </div>
+                            <div class="thumb">
+                            	<img src="{config.base_url}/app/views/images/icon-mini-plate.png" alt="" />
+                            </div>
+                            <div class="description">
+                            	<p><strong>Grigliatona in compagnia</strong></p>
+								<p>USI Università della Svizzera italiana (Official Page) a Lugano...</p>
+                            </div>
+                            </a>
+                        </li>
+                        <li><a href="#">
+                        	<div class="hour">
+                            	<p>24/07/2013</p>
+                                <p class="time">18.00</p>
+                            </div>
+                            <div class="thumb">
+                            	<img src="{config.base_url}/app/views/images/icon-mini-plate.png" alt="" />
+                            </div>
+                            <div class="description">
+                            	<p><strong>Grigliatona in compagnia</strong></p>
+								<p>USI Università della Svizzera italiana (Official Page) a Lugano...</p>
+                            </div>
+                            </a>
+                        </li>
+                    </ul>
+            </div>
+       </div>
+    </div>
+</div>
+{/content}
