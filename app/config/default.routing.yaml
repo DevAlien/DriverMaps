@@ -3,7 +3,7 @@ homepage:
   param: { controller: home, action: index}
 
 signup:
-  url:   /user/signup
+  url:   /register
   param: { controller: user, action: signup, method: POST}
 
 login:
@@ -41,6 +41,9 @@ event_view:
 event_create:
   url:   /event/new
   param: { controller: event, action: create, method: GET}
-map_index;
+map_index:
   url:  /map
   param: { controller: maps, action: index }
+login_signup:
+  url:  /login_signup
+  param: { controller: home, action: login }

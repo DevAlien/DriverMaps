@@ -104,7 +104,6 @@ li p { line-height: 21px; }
 ================================================== */
 
 img {
-	max-width: 100%;
 	height: auto;
 	vertical-align:bottom; 
 }

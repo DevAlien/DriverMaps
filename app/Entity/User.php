@@ -93,7 +93,6 @@ class User implements UserInterface
         $this->deletedOn->setDate(0,0,0);
         $this->activatedOn  = new \DateTime();
         $this->activatedOn->setDate(0,0,0);
-        $this->salt = "a not very good salt";
     }
     
     /**

@@ -10,12 +10,17 @@ class HomeController extends Controller
 {
     public function indexAction()
     {
-        echo $this->get('template')->burn('index', 'html');
+        $auth = $this->get('auth');
+        $user = $auth->getUser();
+        if (!$user)
+            echo $this->get('template')->burn('index', 'html');
+        else
+            echo $this->get('template')->burn('maps', 'html');
     }
 
-    public function searchAction()
+    public function loginAction()
     {
-        echo $this->get('template')->burn('search', 'html');
+        echo $this->get('template')->burn('login', 'html');
     }
 
     public function retrieveAction()
