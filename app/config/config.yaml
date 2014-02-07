@@ -1,12 +1,12 @@
 default:
-    base: http://localhost
-    base_url: http://localhost/projects/drivermaps
-    base_dir: /projects/drivermaps
+    base: http://ensiria.it
+    base_url: http://ensiria.it/GIT/DriverMaps
+    base_dir: /GIT/DriverMaps
     db_type: mysql
-    db_host: localhost
+    db_host: 127.0.0.1
     db_name: qcino
     db_username: root
-    db_password: "localhost"
+    db_password: ""
     db_namespace: Qcino
     routing: default
     lang: en
