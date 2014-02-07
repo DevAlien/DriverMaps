@@ -3,11 +3,19 @@ default:
     base_url: http://ensiria.it/GIT/DriverMaps/
     base_dir: /Library/WebServer/Documents/GIT/DriverMaps/
     db_type: mysql
+<<<<<<< HEAD
     db_host: 127.0.0.1
     db_name: qcino
     db_username: root
     db_password: ""
     db_namespace: Qcino
+=======
+    db_host: localhost
+    db_name: drivermaps
+    db_username: drivermaps
+    db_password: "drivermaps9900"
+    db_namespace: DriverMaps
+>>>>>>> 9c7c87d6c18532696a868844cb14d05013ad4d18
     routing: default
     lang: en
 
