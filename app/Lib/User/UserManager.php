@@ -57,14 +57,30 @@ class UserManager
         return $user;
     }
 
+    private function generateSalt($qtd = 20)
+    { 
+        //Under the string $Caracteres you write all the characters you want to be used to randomly generate the code. 
+        $Caracteres = 'ABCDEFGHIJKLMOPQRSTUVXWYZ0123456789'; 
+        $QuantidadeCaracteres = strlen($Caracteres); 
+        $QuantidadeCaracteres--; 
+
+        $Hash=NULL; 
+        for($x=1;$x<=$qtd;$x++){ 
+            $Posicao = rand(0,$QuantidadeCaracteres); 
+            $Hash .= substr($Caracteres,$Posicao,1); 
+        } 
+
+        return $Hash; 
+    } 
     private function saveNewUser($data)
     {
         $user = new User();
         $user->setEmail($data['email']);
+        $user->setSalt($this->generateSalt());
         $user->setPassword($data['password']);
 
         $userData = new UserData();
-        $userData->setName($data['name'] . ' ' . $data['surname']);
+        $userData->setName($data['name']);
         $user->setUserData($userData);
 
         $this->em->persist($user);
@@ -74,7 +90,7 @@ class UserManager
     private function getUser($email)
     {
         $em = $this->getEm();
-        $userRepo = $em->getRepository('Cookmehome:User');
+        $userRepo = $em->getRepository('DriverMaps:User');
         $user = $userRepo->findOneBy(array('email' => $email));
 
         return $user;
@@ -114,7 +130,6 @@ class UserManager
     {
         $needed = array(
                 'name',
-                'surname',
                 'email',
                 'password',
                 'repeat_password'

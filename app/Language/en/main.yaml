@@ -1,9 +1,18 @@
 topbar:
-	signup: Signup
-	login: LOGIN
-	start_now: START NOW!
-	dashboard: Dashboard
-	messages: Messages
+	home: Home
+	login_signup: Login/Signup
+	take_a_tour: Take a tour
+
+	profile: Profile
+
+login_signup:
+	username: username
+	email: E-Mail
+	password: Password
+	repeat_password: Repeat Password
+	register: Register
+	login: Login
+	forgot_password: forgot my password
 add_a_seat: Add a seat!
 need_help: NEED HELP?
 your_listing: Your Listing

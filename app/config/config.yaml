@@ -4,10 +4,10 @@ default:
     base_dir: /projects/drivermaps
     db_type: mysql
     db_host: localhost
-    db_name: qcino
+    db_name: drivermaps
     db_username: root
     db_password: "localhost"
-    db_namespace: Qcino
+    db_namespace: DriverMaps
     routing: default
     lang: en
 

@@ -62,9 +62,15 @@
             <div class="grid-70 hide-on-mobile tablet-grid-70">
 				<nav id="ut-navigation">
                     <ul>
-                        <li><a class="selected" href="#mainsite">Home</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#products">Take a tour</a></li>
+                    {ifIsLogged}
+                        <li><a href="{config.base_url}">{lang.topbar.home}</a></li>
+                        <li><a href="{config.base_url}/profile">{lang.topbar.profile}</a></li>
+                        <li><a href="{config.base_url}/take_tour">{lang.topbar.take_a_tour}</a></li>
+                    {else}
+                        <li><a href="{config.base_url}">{lang.topbar.home}</a></li>
+                        <li><a href="{config.base_url}/login_signup">{lang.topbar.login_signup}</a></li>
+                        <li><a href="{config.base_url}/take_tour">{lang.topbar.take_a_tour}</a></li>
+                    {/if}
                     </ul>
         		</nav>
         	</div><!-- close navigation -->

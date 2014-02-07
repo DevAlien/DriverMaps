@@ -32,7 +32,7 @@ class UserController extends Controller
         $userManager = new UserManager($em);
         
         try{
-            $userManager->signup($req->getPost('login'));
+            $userManager->signup($req->getPost());
             echo json_encode(array('response' => true));
         } catch(\Exception $e) {
             echo json_encode(array('response' => false, 'message' => $e->getMessage()));
@@ -47,7 +47,7 @@ class UserController extends Controller
         $userManager = new UserManager($em);
         
         try{
-            $user = $userManager->validateForLogin($req->getPost('login'));
+            $user = $userManager->validateForLogin($req->getPost());
             $user->getUserData()->getName();
             $auth = $this->get('auth');
             $auth->login($user);
